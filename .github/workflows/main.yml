@@ -57,6 +57,6 @@ jobs:
         with:
           upload_url: ${{ steps.create_new_release.outputs.upload_url }}
           asset_path: ./apk.zip
-          asset_name: oneplayapp-v${{ github.run_number }}-root-debug.apk
+          asset_name: oneplayapp-v${{ github.run_number }}-root-debug.zip
           asset_content_type: application/apk
           
