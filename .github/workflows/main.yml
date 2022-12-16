@@ -56,7 +56,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_new_release.outputs.upload_url }}
-          asset_path: ./apk-debug
+          asset_path: $(ls *.apk | head -n 1)
           asset_name: oneplayapp-v${{ github.run_number }}-root-debug.apk
           asset_content_type: application/apk
           
