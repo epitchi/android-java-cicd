@@ -41,7 +41,7 @@ jobs:
       - name: Archive site content
         uses: thedoctor0/zip-release@master
         with:
-          filename: apk
+          filename: apk.zip
       - name: Create Github Release
         id: create_new_release
         uses: actions/create-release@v1
@@ -56,7 +56,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_new_release.outputs.upload_url }}
-          asset_path: ./app/build/outputs/apk/debug/apk-debug.apk
+          asset_path: ./apk.zip
           asset_name: oneplayapp-v${{ github.run_number }}-root-debug.apk
           asset_content_type: application/apk
           
